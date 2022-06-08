@@ -8,9 +8,10 @@ grep -rl "ENABLE MAPS HERE" -A 500 $controlFile | grep -v "ENABLE MAPS HERE" | x
 changedsum=$(echo $originalsum $controlFile | sha256sum -c)
 
 if echo "$changedsum" | grep -q "OK" ; then
-	echo "$changedsum"
-	echo "::set-output name=should_run::false"
+	echo "Control does not differ"
+	echo "::set-output name=should_run::0"
 else
-	echo "$changedsum"
-	echo "::set-output name=should_run::true"
+	echo "Control differs - push is needed"
+	echo "::set-output name=should_run::1"
 fi
+
