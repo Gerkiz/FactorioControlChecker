@@ -1,4 +1,4 @@
-FROM alpine:latest as base
+FROM frolvlad/alpine-bash as base
 
 LABEL "repository"="https://github.com/Gerkiz/ControlComment"
 LABEL "homepage"="https://nvfs.se"
