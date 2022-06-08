@@ -1,0 +1,9 @@
+name: 'Factorio Control comment'
+description: 'Unchecks/comments all maps/scenarios.'
+author: 'Gerkiz <gerkiz@nvfs.se>'
+branding:
+  icon: 'check-square'
+  color: 'gray-dark'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
